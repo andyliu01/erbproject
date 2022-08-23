@@ -25,10 +25,6 @@ urlpatterns = [
     path("contact",include("contact.urls")),
     # shop
     path("shop/",include("shop.urls")),
-    # portfolio
-    path("portfolio/",include("portfolio.urls")),
-    # blog
-    path("blog/",include("blog.urls")),
     path("accounts/",include("accounts.urls")),
     
 

@@ -38,11 +38,11 @@
         <li class="nav-item">
           <a class="nav-link sub-menu-item" href="{% url 'about' %}">About</a>
         </li>
-        <li class="nav-item">
+        {% comment %} <li class="nav-item">
           <a class="nav-link sub-menu-item" href="{% url 'services' %}"
             >Services</a
           >
-        </li>
+        </li> {% endcomment %}
         <li class="nav-item dropdown parent-menu-item">
           <a
             class="nav-link menu-item dropdown-toggle"
@@ -85,7 +85,7 @@
           </ul>
         </li>
 
-        <li class="nav-item dropdown parent-menu-item">
+        {% comment %} <li class="nav-item dropdown parent-menu-item">
           <a
             class="nav-link menu-item dropdown-toggle"
             data-bs-toggle="dropdown"
@@ -104,8 +104,8 @@
               >
             </li>
           </ul>
-        </li>
-        <li class="nav-item dropdown parent-menu-item">
+        </li> {% endcomment %}
+        {% comment %} <li class="nav-item dropdown parent-menu-item">
           <a
             class="nav-link menu-item dropdown-toggle"
             data-bs-toggle="dropdown"
@@ -132,9 +132,9 @@
                 href="{% url 'blog-single-post' %}"
                 >Single Post</a
               >
-            </li>
-          </ul>
-        </li>
+            </li> {% endcomment %}
+          {% comment %} </ul>
+        </li> {% endcomment %}
         <li class="nav-item">
           <a class="nav-link sub-menu-item" href="{% url 'contact' %}"
             >Contact</a
@@ -204,3 +204,6 @@
 </nav>
 <!-- END NAVBAR -->
 {% endblock navbar %}
+
+
+
