@@ -1,5 +1,9 @@
+# from itertools import product
+import logging
+from .models import Product
 from django.shortcuts import render
 from django.views import View
+
 # Create your views here.
 
 
@@ -27,3 +31,9 @@ class CheckoutView(View):
     def get(self,request):
         gretting={"title":"Checkout"}
         return render(request,'shop/checkout.html',gretting)
+    
+    
+    
+    
+    
+    

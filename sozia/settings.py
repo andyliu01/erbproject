@@ -78,15 +78,21 @@ WSGI_APPLICATION = 'sozia.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'erbproject',
-        'USER': 'postgres',
-        'PASSWORD': '13572468',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+    
+    
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'erbproject',
+    #     'USER': 'postgres',
+    #     'PASSWORD': '13572468',
+    #     'HOST': 'localhost',
+    #     'PORT': '5432',
         
 
-    }
+    # }
 }
 
 
@@ -129,6 +135,11 @@ USE_TZ = False
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 STATIC_ROOT = os.path.join(BASE_DIR,'assets')
+
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 
 # SMTP Configure
