@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
 from django.http import JsonResponse
 from django.core.mail import BadHeaderError, message, send_mail
@@ -17,14 +17,19 @@ class ContactView(View):
             email = request.POST.get("email")
             subject = request.POST.get("subject")
             comment = request.POST.get("comments")
-            if name and email and subject and comment != "":
-                subject1 = "Thank You"
-                subject = "Contect Us"
-                from_mail = 'sozia@support.com'
-                message = "Thank you for contact us"
-                send_mail(subject1, message, from_mail, [email],fail_silently=False)
-                contact = ContectUs.objects.create(name=name,email=email,subject=subject,comment=comment)
-            data = {
-                'success_message' : 'Email Successfully send'
-            }
-            return JsonResponse(data,safe=False)
+            # if name and email and subject and comment != "":
+            #     subject1 = "Thank You"
+            #     subject = "Contect Us"
+            #     from_mail = 'sozia@support.com'
+            #     message = "Thank you for contact us"
+            #     send_mail(subject1, message, from_mail, [email],fail_silently=False)
+            #     contact = ContectUs.objects.create(name=name,email=email,subject=subject,comment=comment)
+            # data = {
+            #     'success_message' : 'Email Successfully send'
+            # }
+            # return JsonResponse(data,safe=False)
+            return redirect('/contact')
+        
+        
+        
+        

@@ -7,13 +7,13 @@
         src="{% static 'images/logo-light.png'%}"
         class="logo-light"
         alt=""
-        height="18"
+        height="100"
       />
       <img
         src="{% static 'images/logo-dark.png'%}"
         class="logo-dark"
         alt=""
-        height="18"
+        height="100"
       />
     </a>
 
@@ -58,11 +58,11 @@
                 >Products</a
               >
             </li>
-            <li class="nav-item">
+            {% comment %} <li class="nav-item">
               <a class="nav-link sub-menu-item" href="{% url 'product-list' %}"
                 >Product List</a
               >
-            </li>
+            </li> {% endcomment %}
             <li class="nav-item">
               <a
                 class="nav-link sub-menu-item"

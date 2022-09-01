@@ -12,10 +12,10 @@ class ProductView(View):
         gretting={"title":"Product"}
         return render(request,'shop/products.html',gretting)
 
-class ProductListView(View):
-    def get(self,request):
-        gretting={"title":"Product List"}
-        return render(request,'shop/product-list.html',gretting)
+# class ProductListView(View):
+#     def get(self,request):
+#         gretting={"title":"Product List"}
+#         return render(request,'shop/product-list.html',gretting)
 
 class ProductDetailsView(View):
     def get(self,request):

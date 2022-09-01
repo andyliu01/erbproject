@@ -1,10 +1,8 @@
-{% extends "partials/base.html" %} 
-
-{% comment %} {% load humanize %}  {% endcomment %}
-
-{% block title %} | Search Results{% endblock %}
-
-{% block content %}
+{% extends "partials/base.html" %}
+<!---->
+{% comment %} {% load humanize %} {% endcomment %}
+<!---->
+{% block title %} | Search Results{% endblock %} {% block content %}
 
 <section id="showcase-inner" class="showcase-search text-white py-5">
   <div class="container">
@@ -23,61 +21,9 @@
                 value="{{ values.keywords}}"
               />
             </div>
-
-            {% comment %} 
-            
-            <div class="col-md-4 mb-3">
-              <label class="sr-only">City</label>
-              <input
-                type="text"
-                name="city"
-                class="form-control"
-                placeholder="City"
-              />
-            </div> {% endcomment %}
-
-            {% comment %} <div class="col-md-4 mb-3">
-              <label class="sr-only">State</label>
-              <select name="state" class="form-control">
-                <option selected="true" disabled="disabled">State (All)</option>
-
-                {% for key,value in state_choices.items %} 
-                <option value="{{key}}" {% if key == values.state %}selected
-                {% endif %}>{{value}}</option>
-                {% endfor %}
-              </select>
-            </div> {% endcomment %}
-            
           </div>
-          <!-- Form Row 2 -->
-          {% comment %} <div class="form-row">
-            <div class="col-md-6 mb-3">
-              <label class="sr-only">Bedrooms</label>
-              <select name="bedrooms" class="form-control">
-                <option selected="true" disabled="disabled">
-                  Bedrooms (Any)
-                </option>
-                {% for key,value in bedroom_choices.items %} 
-                <option value="{{key}}" {% if key == values.bedrooms %}selected
-                {% endif %}>{{value}}</option>
-                {% endfor %}
-                
-              </select>
-            </div>
-            <div class="col-md-6 mb-3">
-              <select name="price" class="form-control">
-                <option selected="true" disabled="disabled">
-                  Max Price (All)
-                </option>
-                {% for key,value in price_choices.items %} 
-                <option value="{{key}}" {% if key == values.price %}selected
-                {% endif %}>{{value}}</option>
-                {% endfor %}
 
-              </select>
-            </div>
-          </div> {% endcomment %}
-        <br>
+          <br />
           <button class="btn btn-secondary btn-block mt-4" type="submit">
             Submit
           </button>
@@ -87,7 +33,8 @@
   </div>
 </section>
 
-{% comment %} <!-- Breadcrumb -->
+{% comment %}
+<!-- Breadcrumb -->
 <section id="bc" class="mt-3">
   <div class="container">
     <nav aria-label="breadcrumb">
@@ -102,10 +49,8 @@
       </ol>
     </nav>
   </div>
-</section>  {% endcomment %}
-
-
-
+</section>
+{% endcomment %}
 
 <!-- Products -->
 <section id="products" class="py-4">
@@ -119,49 +64,75 @@
           <img class="card-img-top" src="{{ product.photo_main.url }}" alt="" />
           <div class="card-img-overlay">
             <h2>
-              {% comment %} <span class="badge badge-secondary text-white">${{ listing.price | intcomma }}</span> {% endcomment %}
+              {% comment %}
+              <span class="badge badge-secondary text-white"
+                >${{ listing.price | intcomma }}</span
+              >
+              {% endcomment %}
             </h2>
           </div>
           <div class="card-body">
             <div class="product-heading text-center">
               <h4 class="text-primary">{{ product.name }}</h4>
-              {% comment %} <p>
-                <i class="fas fa-map-marker text-secondary"></i> {{ listing.city }} {{ listing.state }}, {{ listing.zipcode }}
-              </p> {% endcomment %}
+              {% comment %}
+              <p>
+                <i class="fas fa-map-marker text-secondary"></i> {{ listing.city
+                }} {{ listing.state }}, {{ listing.zipcode }}
+              </p>
+              {% endcomment %}
             </div>
             <hr />
-            {% comment %} <div class="row py-2 text-secondary">
+            {% comment %}
+            <div class="row py-2 text-secondary">
               <div class="col-6">
                 <i class="fas fa-th-large"></i> Sqft: {{ listing.sqft }}
               </div>
-              <div class="col-6"><i class="fas fa-car"></i> Garage: {{ listing.garage }}</div>
+              <div class="col-6">
+                <i class="fas fa-car"></i> Garage: {{ listing.garage }}
+              </div>
             </div>
             <div class="row py-2 text-secondary">
-              <div class="col-6"><i class="fas fa-bed"></i> Bedrooms: {{ listing.bedrooms }}</div>
-              <div class="col-6"><i class="fas fa-bath"></i> Bathrooms: {{ listing.bathrooms }}</div>
+              <div class="col-6">
+                <i class="fas fa-bed"></i> Bedrooms: {{ listing.bedrooms }}
+              </div>
+              <div class="col-6">
+                <i class="fas fa-bath"></i> Bathrooms: {{ listing.bathrooms }}
+              </div>
             </div>
             <hr />
             <div class="row py-2 text-secondary">
-              <div class="col-12"><i class="fas fa-user"></i> {{ listing.realtor }}</div>
+              <div class="col-12">
+                <i class="fas fa-user"></i> {{ listing.realtor }}
+              </div>
             </div>
             <div class="row text-secondary pb-2">
-              <div class="col-6"><i class="fas fa-clock"></i> {{ listing.list_date | timesince }}</div>
+              <div class="col-6">
+                <i class="fas fa-clock"></i> {{ listing.list_date | timesince }}
+              </div>
             </div>
-            <hr /> {% endcomment %}
-            {% comment %} <a href="{% url 'listing' listing.id %}" class="btn btn-primary btn-block"
+            <hr />
+            {% endcomment %} {% comment %}
+            <a
+              href="{% url 'listing' listing.id %}"
+              class="btn btn-primary btn-block"
               >More Info</a
-            > {% endcomment %}
+            >
+            {% endcomment %}
           </div>
         </div>
       </div>
-      {% endfor %}
 
-      {% else %}
+      <a href="{% url 'product-cart' %}"
+        ><i
+          class="mdi mdi-cart-outline fs-22 me-3 pe-3 fw-bolder pro-icon border-end"
+        ></i
+      ></a>
+
+      {% endfor %} {% else %}
       <div class="col-md-12">
         <p></p>
       </div>
       {% endif %}
-      
     </div>
   </div>
 </section>
