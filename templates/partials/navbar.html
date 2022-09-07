@@ -7,13 +7,13 @@
         src="{% static 'images/logo-light.png'%}"
         class="logo-light"
         alt=""
-        height="100"
+        height="120"
       />
       <img
         src="{% static 'images/logo-dark.png'%}"
         class="logo-dark"
         alt=""
-        height="100"
+        height="120"
       />
     </a>
 
@@ -63,13 +63,13 @@
                 >Product List</a
               >
             </li> {% endcomment %}
-            <li class="nav-item">
+            {% comment %} <li class="nav-item">
               <a
                 class="nav-link sub-menu-item"
                 href="{% url 'product-detail' %}"
                 >Product Details</a
               >
-            </li>
+            </li> {% endcomment %}
             <li class="nav-item">
               <a class="nav-link sub-menu-item" href="{% url 'product-cart' %}"
                 >Cart</a

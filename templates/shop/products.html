@@ -1,5 +1,7 @@
 {% extends 'partials/base.html' %} {% load static %} {% block content %}
 
+
+
 <!-- Start Title -->
 <section>
   <div class="container">
@@ -23,236 +25,16 @@
 </section>
 <!-- End Title -->
 
-<section class="sm-section">
+<!-- Remove the below -->
+ <section class="sm-section">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="border-bottom">
-          <div class="row align-items-center pb-sm-3 pb-4">
-            <div class="col-lg-8 col-md-6 my-md-0 my-2">
-              <p class="text-muted mb-0 py-sm-0 py-2">
-                Showing 1–9 of 15 results
-              </p>
-            </div>
-            <div class="col-lg-4 col-md-6 my-md-0 my-2">
-              <form>
-                <div class="row mb-0 mt-md-4 mt-lg-0">
-                  <h5 class="col-sm-3 col-form-label">Sort By :</h5>
-                  <div class="col-sm-9 ps-0">
-                    <select
-                      class="form-select bg-light text-muted border fs-14 py-2 ms-sm-0 ms-1"
-                      aria-label="Default select example"
-                    >
-                      <option selected>Most Popular</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
-                    </select>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      {% comment %} </div>
+    </div>   {% endcomment %}
     <!-- END ROW -->
-    {% comment %}
-    <div class="row">
-      #mark on 26 Aug 2022
-      <div class="col-md-3">
-        <div class="sidebar shadow rounded-3 py-4 mt-4">
-          <div class="mb-4 ms-4">
-            <a href="{% url 'products' %}"
-              ><i data-feather="grid" class="text-primary me-2"></i
-            ></a>
-            <a href="{% url 'product-list' %}"
-              ><i data-feather="list" class="text-muted"></i
-            ></a>
-          </div>
-          {% endcomment %}
-          <!-- categories -->
-          {% comment %}
-          <div>
-            #mark on 26 Aug 2022
-            <div class="p-3 bg-light">
-              <h6 class="mb-0">Categories</h6>
-            </div>
-            <div class="ms-3 my-3">
-              <div class="form-check mb-2">
-                <input
-                  class="form-check-input fs-16"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckDefaulta1"
-                />
-                <label
-                  class="form-check-label text-dark ms-2"
-                  for="flexCheckDefaulta1"
-                  >Accessories</label
-                >
-              </div>
-              <div class="form-check mb-2">
-                <input
-                  class="form-check-input fs-16"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckChecked11"
-                  checked
-                />
-                <label
-                  class="form-check-label text-dark ms-2"
-                  for="flexCheckChecked11"
-                  >Bag</label
-                >
-              </div>
-              <div class="form-check mb-2">
-                <input
-                  class="form-check-input fs-16"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckChecked22"
-                />
-                <label
-                  class="form-check-label text-dark ms-2"
-                  for="flexCheckChecked22"
-                  >Clothing</label
-                >
-              </div>
-              <div class="form-check mb-2">
-                <input
-                  class="form-check-input fs-16"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckChecked33"
-                />
-                <label
-                  class="form-check-label text-dark ms-2"
-                  for="flexCheckChecked33"
-                  >Decore</label
-                >
-              </div>
-              <div class="form-check mb-2">
-                <input
-                  class="form-check-input fs-16"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckChecked44"
-                />
-                <label
-                  class="form-check-label text-dark ms-2"
-                  for="flexCheckChecked44"
-                  >Coffee Pots</label
-                >
-              </div>
-              <a class="fw-normal text-primary" href="javascript:void(0)"
-                >& More Products</a
-              >
-            </div>
-          </div>
-          {% endcomment %}
-          <!-- end categories -->
-
-          <!-- color -->
-          {% comment %}
-          <div class="mt-4">
-            #markon 26 Aug 2022
-            <div class="p-3 bg-light">
-              <h6 class="mb-0">Choose Color</h6>
-            </div>
-            <div class="ms-3 my-3">
-              <div class="form-check mb-2">
-                <input
-                  class="form-check-input fs-16"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckDefaulta2"
-                />
-                <label
-                  class="form-check-label text-dark"
-                  for="flexCheckDefaulta2"
-                  ><i class="mdi mdi-circle ms-2 fs-16"></i> Red</label
-                >
-              </div>
-              <div class="form-check mb-2">
-                <input
-                  class="form-check-input fs-16"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckChecked55"
-                  checked
-                />
-                <label
-                  class="form-check-label text-dark"
-                  for="flexCheckChecked55"
-                  ><i class="mdi mdi-circle text-primary ms-2 fs-16"></i>
-                  Blue</label
-                >
-              </div>
-              <div class="form-check mb-2">
-                <input
-                  class="form-check-input fs-16"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckChecked66"
-                />
-                <label
-                  class="form-check-label text-dark"
-                  for="flexCheckChecked66"
-                  ><i class="mdi mdi-circle text-dark ms-2 fs-16"></i>
-                  Black</label
-                >
-              </div>
-              <div class="form-check mb-2">
-                <input
-                  class="form-check-input fs-16"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckChecked77"
-                />
-                <label
-                  class="form-check-label text-dark"
-                  for="flexCheckChecked77"
-                  ><i class="mdi mdi-circle text-info ms-2 fs-16"></i>
-                  Cyan</label
-                >
-              </div>
-              <div class="form-check mb-2">
-                <input
-                  class="form-check-input fs-16"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckChecked88"
-                />
-                <label
-                  class="form-check-label text-dark"
-                  for="flexCheckChecked88"
-                  ><i class="mdi mdi-circle text-warning ms-2 fs-16"></i>
-                  Yellow</label
-                >
-              </div>
-              <div class="form-check mb-2">
-                <input
-                  class="form-check-input fs-16"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckChecked99"
-                />
-                <label
-                  class="form-check-label text-dark"
-                  for="flexCheckChecked99"
-                  ><i class="mdi mdi-circle text-success ms-2 fs-16"></i>
-                  Green</label
-                >
-              </div>
-            </div>
-          </div>
-          {% endcomment %}
-          <!-- end color -->
 
           <!-- items -->
           {% comment %}
-          <div class="mt-4">
+          <div class="mt4">
             #markon 26 Aug 2022
             <div class="p-3 bg-light">
               <h6 class="mb-0">Items</h6>
@@ -272,567 +54,216 @@
           {% endcomment %}
           <!-- end item -->
 
-          <!-- start price -->
-          {% comment %}
-          <div class="mt-4">
-            #mark on 26 Aug 2022
-            <div class="p-3 bg-light mb-3">
-              <h6 class="mb-0">Price</h6>
-            </div>
-            <div class="ms-3 my-3">
-              <div class="form-check mb-2">
-                <input
-                  class="form-check-input fs-16"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckDefaulta7"
-                />
-                <label
-                  class="form-check-label text-dark ms-2"
-                  for="flexCheckDefaulta7"
-                  >$50 - $99</label
-                >
-              </div>
-              <div class="form-check mb-2">
-                <input
-                  class="form-check-input fs-16"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckChecke"
-                  checked
-                />
-                <label
-                  class="form-check-label text-dark ms-2"
-                  for="flexCheckChecke"
-                  >$100 - $199</label
-                >
-              </div>
-              <div class="form-check mb-2">
-                <input
-                  class="form-check-input fs-16"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckCheck"
-                />
-                <label
-                  class="form-check-label text-dark ms-2"
-                  for="flexCheckCheck"
-                  >$200 - $299</label
-                >
-              </div>
-              <div class="form-check mb-2">
-                <input
-                  class="form-check-input fs-16"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckChec"
-                />
-                <label
-                  class="form-check-label text-dark ms-2"
-                  for="flexCheckChec"
-                  >$300 - $399</label
-                >
-              </div>
-              <div class="form-check mb-2">
-                <input
-                  class="form-check-input fs-16"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckChe"
-                />
-                <label
-                  class="form-check-label text-dark ms-2"
-                  for="flexCheckChe"
-                  >$400 - $499</label
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {% endcomment %} {% comment %} marked line 204 for container make photo in
+          {% comment %} marked line 204 for container make photo in
       center {% endcomment %}
-      <div class="container">
-        <div class="col-md-9">
-          <div class="row">
-            <div class="col-lg-4 col-md-6">
-              <div class="product-item mt-4">
-                <div class="product-img rounded position-relative">
-                  <img
-                    class="img-fluid"
-                    src="{% static 'images/products/pro-1.jpg'%}"
-                    alt=""
-                  />
-                  <span
-                    class="text-dark badge bg-light rounded-3 fs-14 fw-bold position-absolute top-0 start-0 mt-2 ms-2 py-2"
-                    >-20%</span
-                  >
+      {% comment %} <div class="container" class="col-md-9">
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="product-item mt-4">
+              <div class="product-img rounded position-relative">
+                <img
+                  class="img-fluid"
+                  src="{% static 'images/products/pro-1.jpg'%}"
+                  alt=""
+                />
+                <span
+                  class="text-dark badge bg-light rounded-3 fs-14 fw-bold position-absolute top-0 start-0 mt-2 ms-2 py-2"
+                  >-20%</span
+                >
 
-                  <div
-                    class="hover-content text-center w-100 position-absolute bottom-0 start-50 translate-middle-x py-2 mb-3"
-                  >
-                    <a href="{% url 'product-cart' %}"
-                      ><i
-                        class="mdi mdi-cart-outline fs-22 me-3 pe-3 fw-bolder pro-icon border-end"
-                      ></i
-                    ></a>
-                    {% comment %} #marked on 26 Aug 2022
-                    <a href="{% url 'product-detail' %}"
-                      ><i
-                        class="mdi mdi-eye-outline fs-22 me-3 pe-3 fw-bolder pro-icon border-end active"
-                      ></i
-                    ></a>
-                    {% endcomment %}
-                    <a href="{% url 'product-cart' %}"
-                      ><i
-                        class="mdi mdi-heart-outline fs-22 fw-bolder pro-icon"
-                      ></i
-                    ></a>
-                  </div>
-                </div>
-                <div class="pro-content my-3">
-                  <div class="d-flex align-items-center">
-                    <ins
-                      class="pe-2 fs-15 fw-semibold text-decoration-none text-dark"
-                      >$29.00</ins
-                    >
-                    <del class="text-muted fs-15">$30.00</del>
-                    <div class="rating ms-auto">
-                      <i
-                        class="mdi mdi-star fs-18 text-warning d-inline-block"
-                      ></i>
-                      <h5 class="d-inline-block fs-15">5.0</h5>
-                    </div>
-                  </div>
-                  <a href="{% url 'product-detail' %}">
-                    <p class="text-muted fw-normal lh-base my-1">Plant 01</p>
-                  </a>
+                <div
+                  class="hover-content text-center w-100 position-absolute bottom-0 start-50 translate-middle-x py-2 mb-3"
+                >
+                  <a href="{% url 'product-cart' %}"
+                    ><i
+                      class="mdi mdi-cart-outline fs-22 me-3 pe-3 fw-bolder pro-icon border-end"
+                    ></i
+                  ></a> {% endcomment %}
+                  {% comment %} #marked on 26 Aug 2022
+                  <a href="{% url 'product-detail' %}"
+                    ><i
+                      class="mdi mdi-eye-outline fs-22 me-3 pe-3 fw-bolder pro-icon border-end active"
+                    ></i
+                  ></a>
+                  {% endcomment %} <!--# comment out by MATTHIAS -->
+                  {% comment %} <a href="{% url 'product-cart' %}"
+                    ><i
+                      class="mdi mdi-heart-outline fs-22 fw-bolder pro-icon"
+                    ></i
+                  ></a>
                 </div>
               </div>
-            </div>
-            <!-- end col -->
-            <div class="col-lg-4 col-md-6">
-              <div class="product-item mt-4">
-                <div class="product-img rounded position-relative">
-                  <img
-                    class="img-fluid"
-                    src="{% static 'images/products/pro-2.jpg'%}"
-                    alt=""
-                  />
-                  <div
-                    class="hover-content text-center w-100 position-absolute bottom-0 start-50 translate-middle-x py-2 mb-3"
+              <div class="pro-content my-3">
+                <div class="d-flex align-items-center">
+                  <ins
+                    class="pe-2 fs-15 fw-semibold text-decoration-none text-dark" 
+                    >{{ product.price }}</ins
                   >
-                    <a href="{% url 'product-cart' %}"
-                      ><i
-                        class="mdi mdi-cart-outline fs-22 me-3 pe-3 fw-bolder pro-icon text-dark border-end"
-                      ></i
-                    ></a>
-                    <a href="{% url 'product-detail' %}"
-                      ><i
-                        class="mdi mdi-eye-outline fs-22 me-3 pe-3 fw-bolder pro-icon border-end active"
-                      ></i
-                    ></a>
-                    <a href="{% url 'product-cart' %}"
-                      ><i
-                        class="mdi mdi-heart-outline text-dark fs-22 fw-bolder pro-icon"
-                      ></i
-                    ></a>
+                  <del class="text-muted fs-15">$$$$30</del>
+                  <div class="rating ms-auto">
+                    <i
+                      class="mdi mdi-star fs-18 text-warning d-inline-block"
+                    ></i>
+                    <h5 class="d-inline-block fs-15">5.0</h5>
                   </div>
                 </div>
-                <div class="pro-content my-3">
-                  <div class="d-flex align-items-center">
-                    <ins
-                      class="pe-2 fs-15 fw-semibold text-decoration-none text-dark"
-                      >$35.00</ins
-                    >
-                    <del class="text-muted fs-15">$45.00</del>
-                    <div class="rating ms-auto">
-                      <i
-                        class="mdi mdi-star fs-18 text-warning d-inline-block"
-                      ></i>
-                      <h5 class="d-inline-block fs-15">4.8</h5>
-                    </div>
-                  </div>
-                  <a href="{% url 'product-detail' %}">
-                    <p class="text-muted fw-normal lh-base my-1">
-                      PRd PU Tan Casual regular Walletious
-                    </p>
-                  </a>
-                </div>
+                <a href="{% url 'product-detail' %}">
+                  <p class="text-muted fw-normal lh-base my-1">
+                    Maxbell USB Rechargeable Electronic Flameless
+                  </p>
+                </a>
               </div>
             </div>
-            <!-- end col -->
-            <div class="col-lg-4 col-md-6">
-              <div class="product-item mt-4">
-                <div class="product-img rounded position-relative">
-                  <img
-                    class="img-fluid"
-                    src="{% static 'images/products/pro-3.jpg'%}"
-                    alt=""
-                  />
-                  <span
-                    class="text-dark badge bg-light rounded-3 fs-14 fw-bold position-absolute top-0 start-0 mt-2 ms-2 py-2"
-                    >-18%</span
-                  >
-                  <div
-                    class="hover-content text-center w-100 position-absolute bottom-0 start-50 translate-middle-x py-2 mb-3"
-                  >
-                    <a href="{% url 'product-cart' %}"
-                      ><i
-                        class="mdi mdi-cart-outline fs-22 me-3 pe-3 fw-bolder pro-icon text-dark border-end"
-                      ></i
-                    ></a>
-                    <a href="{% url 'product-detail' %}"
-                      ><i
-                        class="mdi mdi-eye-outline fs-22 me-3 pe-3 fw-bolder pro-icon border-end active"
-                      ></i
-                    ></a>
-                    <a href="{% url 'product-cart' %}"
-                      ><i
-                        class="mdi mdi-heart-outline text-dark fs-22 fw-bolder pro-icon"
-                      ></i
-                    ></a>
-                  </div>
-                </div>
-                <div class="pro-content my-3">
-                  <div class="d-flex align-items-center">
-                    <ins
-                      class="pe-2 fs-15 fw-semibold text-decoration-none text-dark"
-                      >$20.00</ins
+          </div> {% endcomment %}
+           <!-- end col --> 
+          
+          <!--start of product item (by Matt)-->
+          <div class="col-md-9">
+            <div class="row">
+              <!-- Add code here-->
+              {% if products %} {% for product in products %}
+              <div class="col-lg-4 col-md-6">
+                <div class="product-item mt-4">
+                  <div class="product-img rounded position-relative">
+                    <img
+                      class="img-fluid"
+                      src="{{ product.photo_main.url }}"
+                      
+                      alt=""
+                    />
+                    
+                    <!--take away the discount portion-->
+                    {% if product.discount_percent != 0 %}
+                    <span
+                      class="text-dark badge bg-light rounded-3 fs-14 fw-bold position-absolute top-0 start-0 mt-2 ms-2 py-2"
+
+                      >-{{ product.discount_percent }} % off</span
                     >
-                    <del class="text-muted fs-15">$30.00</del>
-                    <div class="rating ms-auto">
-                      <i
-                        class="mdi mdi-star fs-18 text-warning d-inline-block"
-                      ></i>
-                      <h5 class="d-inline-block fs-15">4.9</h5>
+                    {% endif %}
+
+                    <div
+                      class="hover-content text-center w-100 position-absolute bottom-0 start-50 translate-middle-x py-2 mb-3"
+                    >
+                      <a href="{% url 'product-cart' %}"
+                        ><i
+                          class="mdi mdi-cart-outline fs-22 me-3 pe-3 fw-bolder pro-icon border-end"
+                        ></i
+                      ></a>
+                      <a href="{% url 'product' product.id %}"
+                        ><i
+                          class="mdi mdi-eye-outline fs-22 me-3 pe-3 fw-bolder pro-icon border-end active"
+                        ></i
+                      ></a>
+                      {% comment %} <a href="{% url 'product-cart' %}"
+                        ><i
+                          class="mdi mdi-heart-outline fs-22 fw-bolder pro-icon"
+                        ></i
+                      ></a> {% endcomment %}
                     </div>
                   </div>
-                  <a href="{% url 'product-detail' %}">
-                    <p class="text-muted fw-normal lh-base my-1">
-                      Children Decorated Shoes Cotton Green
-                    </p>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <!-- end col -->
-            <div class="col-lg-4 col-md-6">
-              <div class="product-item mt-4">
-                <div class="product-img rounded position-relative">
-                  <img
-                    class="img-fluid"
-                    src="{% static 'images/products/pro-4.jpg'%}"
-                    alt=""
-                  />
-                  <div
-                    class="hover-content text-center w-100 position-absolute bottom-0 start-50 translate-middle-x py-2 mb-3"
-                  >
-                    <a href="{% url 'product-cart' %}"
-                      ><i
-                        class="mdi mdi-cart-outline fs-22 me-3 pe-3 fw-bolder pro-icon text-dark border-end"
-                      ></i
-                    ></a>
-                    <a href="{% url 'product-detail' %}"
-                      ><i
-                        class="mdi mdi-eye-outline fs-22 me-3 pe-3 fw-bolder pro-icon border-end active"
-                      ></i
-                    ></a>
-                    <a href="{% url 'product-cart' %}"
-                      ><i
-                        class="mdi mdi-heart-outline text-dark fs-22 fw-bolder pro-icon"
-                      ></i
-                    ></a>
-                  </div>
-                </div>
-                <div class="pro-content my-3">
-                  <div class="d-flex align-items-center">
-                    <ins
-                      class="pe-2 fs-15 fw-semibold text-decoration-none text-dark"
-                      >$39.00</ins
-                    >
-                    <del class="text-muted fs-15">$59.00</del>
-                    <div class="rating ms-auto">
-                      <i
-                        class="mdi mdi-star fs-18 text-warning d-inline-block"
-                      ></i>
-                      <h5 class="d-inline-block fs-15">5.0</h5>
+                  <!-- this is discounted price below the item pic, called from models.py def discount -->
+                  {% if product.discount_percent != 0 %}
+                  <div class="pro-content my-3">
+                    <div class="d-flex align-items-center">
+                      <ins
+                        class="pe-2 fs-15 fw-semibold text-decoration-none text-dark"
+                        >$ {{ product.discount }}</ins
+                      >
+                      <!-- item original price -->
+                      <del class="text-muted fs-15">
+                      $ {{ product.price }}</del> 
+                  {% else %}
+                  <div class="pro-content my-3">
+                    <div class="d-flex align-items-center">
+                      <ins
+                        class="pe-2 fs-15 fw-semibold text-decoration-none text-dark"
+                        >$ {{ product.price }}</ins
+                      >
+                  {% endif %}
+
+
+                      <div class="rating ms-auto">
+                        <i
+                          class="mdi mdi-star fs-18 text-warning d-inline-block"
+                        ></i>
+                        <h5 class="d-inline-block fs-15">
+                          {{ product.selected_item }}
+                        </h5>
+                      </div>
                     </div>
+                    <a href="{% url 'product' product.id %}">
+                      <p class="text-muted fw-normal lh-base my-1">
+                        {{ product.name }}
+                      </p>
+                    </a>
                   </div>
-                  <a href="{% url 'product-detail' %}">
-                    <p class="text-muted fw-normal lh-base my-1">
-                      Maxbell USB Rechargeable Electronic Flameless
-                    </p>
-                  </a>
                 </div>
               </div>
-            </div>
-            <!-- end col -->
-            <div class="col-lg-4 col-md-6">
-              <div class="product-item mt-4">
-                <div class="product-img rounded position-relative">
-                  <img
-                    class="img-fluid"
-                    src="{% static 'images/products/pro-5.jpg'%}"
-                    alt=""
-                  />
-                  <div
-                    class="hover-content text-center w-100 position-absolute bottom-0 start-50 translate-middle-x py-2 mb-3"
-                  >
-                    <a href="{% url 'product-cart' %}"
-                      ><i
-                        class="mdi mdi-cart-outline fs-22 me-3 pe-3 fw-bolder pro-icon text-dark border-end"
-                      ></i
-                    ></a>
-                    <a href="{% url 'product-detail' %}"
-                      ><i
-                        class="mdi mdi-eye-outline fs-22 me-3 pe-3 fw-bolder pro-icon border-end active"
-                      ></i
-                    ></a>
-                    <a href="{% url 'product-cart' %}"
-                      ><i
-                        class="mdi mdi-heart-outline text-dark fs-22 fw-bolder pro-icon"
-                      ></i
-                    ></a>
-                  </div>
-                </div>
-                <div class="pro-content my-3">
-                  <div class="d-flex align-items-center">
-                    <ins
-                      class="pe-2 fs-15 fw-semibold text-decoration-none text-dark"
-                      >$35.00</ins
-                    >
-                    <del class="text-muted fs-15">$45.00</del>
-                    <div class="rating ms-auto">
-                      <i
-                        class="mdi mdi-star fs-18 text-warning d-inline-block"
-                      ></i>
-                      <h5 class="d-inline-block fs-15">4.8</h5>
-                    </div>
-                  </div>
-                  <a href="{% url 'product-detail' %}">
-                    <p class="text-muted fw-normal lh-base my-1">
-                      PRd PU Tan Casual regular Walletious
-                    </p>
-                  </a>
-                </div>
+              {% endfor %}
+              <!-- no data -->
+              {% else %}
+              <div class="col-md-9">
+                <p>No product found</p>
               </div>
+              {% endif %}
             </div>
-            <!-- end col -->
-            <div class="col-lg-4 col-md-6">
-              <div class="product-item mt-4">
-                <div class="product-img rounded position-relative">
-                  <img
-                    class="img-fluid"
-                    src="{% static 'images/products/pro-6.jpg'%}"
-                    alt=""
-                  />
-                  <div
-                    class="hover-content text-center w-100 position-absolute bottom-0 start-50 translate-middle-x py-2 mb-3"
-                  >
-                    <a href="{% url 'product-cart' %}"
-                      ><i
-                        class="mdi mdi-cart-outline fs-22 me-3 pe-3 fw-bolder pro-icon text-dark border-end"
-                      ></i
-                    ></a>
-                    <a href="{% url 'product-detail' %}"
-                      ><i
-                        class="mdi mdi-eye-outline fs-22 me-3 pe-3 fw-bolder pro-icon border-end active"
-                      ></i
-                    ></a>
-                    <a href="{% url 'product-cart' %}"
-                      ><i
-                        class="mdi mdi-heart-outline text-dark fs-22 fw-bolder pro-icon"
-                      ></i
-                    ></a>
-                  </div>
-                </div>
-                <div class="pro-content my-3">
-                  <div class="d-flex align-items-center">
-                    <ins
-                      class="pe-2 fs-15 fw-semibold text-decoration-none text-dark"
-                      >$20.00</ins
-                    >
-                    <del class="text-muted fs-15">$30.00</del>
-                    <div class="rating ms-auto">
-                      <i
-                        class="mdi mdi-star fs-18 text-warning d-inline-block"
-                      ></i>
-                      <h5 class="d-inline-block fs-15">4.9</h5>
-                    </div>
-                  </div>
-                  <a href="{% url 'product-detail' %}">
-                    <p class="text-muted fw-normal lh-base my-1">
-                      Children Decorated Shoes Cotton Green
-                    </p>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <!-- end col -->
-            <div class="col-lg-4 col-md-6">
-              <div class="product-item mt-4">
-                <div class="product-img rounded position-relative">
-                  <img
-                    class="img-fluid"
-                    src="{% static 'images/products/pro-7.jpg'%}"
-                    alt=""
-                  />
-                  <div
-                    class="hover-content text-center w-100 position-absolute bottom-0 start-50 translate-middle-x py-2 mb-3"
-                  >
-                    <a href="{% url 'product-cart' %}"
-                      ><i
-                        class="mdi mdi-cart-outline fs-22 me-3 pe-3 fw-bolder pro-icon text-dark border-end"
-                      ></i
-                    ></a>
-                    <a href="{% url 'product-detail' %}"
-                      ><i
-                        class="mdi mdi-eye-outline fs-22 me-3 pe-3 fw-bolder pro-icon border-end active"
-                      ></i
-                    ></a>
-                    <a href="{% url 'product-cart' %}"
-                      ><i
-                        class="mdi mdi-heart-outline text-dark fs-22 fw-bolder pro-icon"
-                      ></i
-                    ></a>
-                  </div>
-                </div>
-                <div class="pro-content my-3">
-                  <div class="d-flex align-items-center">
-                    <ins
-                      class="pe-2 fs-15 fw-semibold text-decoration-none text-dark"
-                      >$99.00</ins
-                    >
-                    <del class="text-muted fs-15">$95.00</del>
-                    <div class="rating ms-auto">
-                      <i
-                        class="mdi mdi-star fs-18 text-warning d-inline-block"
-                      ></i>
-                      <h5 class="d-inline-block fs-15">5.0</h5>
-                    </div>
-                  </div>
-                  <a href="{% url 'product-detail' %}">
-                    <p class="text-muted fw-normal lh-base my-1">
-                      Maxbell USB Rechargeable Electronic Flameless
-                    </p>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <!-- end col -->
-            <div class="col-lg-4 col-md-6">
-              <div class="product-item mt-4">
-                <div class="product-img rounded position-relative">
-                  <img
-                    class="img-fluid"
-                    src="{% static 'images/products/pro-8.jpg'%}"
-                    alt=""
-                  />
-                  <span
-                    class="text-dark badge bg-light rounded-3 fs-14 fw-bold position-absolute top-0 start-0 mt-2 ms-2 py-2"
-                    >-26%</span
-                  >
-                  <div
-                    class="hover-content text-center w-100 position-absolute bottom-0 start-50 translate-middle-x py-2 mb-3"
-                  >
-                    <a href="{% url 'product-cart' %}"
-                      ><i
-                        class="mdi mdi-cart-outline fs-22 me-3 pe-3 fw-bolder pro-icon text-dark border-end"
-                      ></i
-                    ></a>
-                    <a href="{% url 'product-detail' %}"
-                      ><i
-                        class="mdi mdi-eye-outline fs-22 me-3 pe-3 fw-bolder pro-icon border-end active"
-                      ></i
-                    ></a>
-                    <a href="{% url 'product-cart' %}"
-                      ><i
-                        class="mdi mdi-heart-outline text-dark fs-22 fw-bolder pro-icon"
-                      ></i
-                    ></a>
-                  </div>
-                </div>
-                <div class="pro-content my-3">
-                  <div class="d-flex align-items-center">
-                    <ins
-                      class="pe-2 fs-15 fw-semibold text-decoration-none text-dark"
-                      >$35.00</ins
-                    >
-                    <del class="text-muted fs-15">$45.00</del>
-                    <div class="rating ms-auto">
-                      <i
-                        class="mdi mdi-star fs-18 text-warning d-inline-block"
-                      ></i>
-                      <h5 class="d-inline-block fs-15">4.8</h5>
-                    </div>
-                  </div>
-                  <a href="{% url 'product-detail' %}">
-                    <p class="text-muted fw-normal lh-base my-1">
-                      PRd PU Tan Casual regular Walletious
-                    </p>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <!-- end col -->
-            <div class="col-lg-4 col-md-6">
-              <div class="product-item mt-4">
-                <div class="product-img rounded position-relative">
-                  <img
-                    class="img-fluid"
-                    src="{% static 'images/products/pro-9.jpg'%}"
-                    alt=""
-                  />
-                  <span
-                    class="text-dark badge bg-light rounded-3 fs-14 fw-bold position-absolute top-0 start-0 mt-2 ms-2 py-2"
-                    >-15%</span
-                  >
-                  <div
-                    class="hover-content text-center w-100 position-absolute bottom-0 start-50 translate-middle-x py-2 mb-3"
-                  >
-                    <a href="{% url 'product-cart' %}"
-                      ><i
-                        class="mdi mdi-cart-outline fs-22 me-3 pe-3 fw-bolder pro-icon text-dark border-end"
-                      ></i
-                    ></a>
-                    <a href="{% url 'product-detail' %}"
-                      ><i
-                        class="mdi mdi-eye-outline fs-22 me-3 pe-3 fw-bolder pro-icon border-end active"
-                      ></i
-                    ></a>
-                    <a href="{% url 'product-cart' %}"
-                      ><i
-                        class="mdi mdi-heart-outline text-dark fs-22 fw-bolder pro-icon"
-                      ></i
-                    ></a>
-                  </div>
-                </div>
-                <div class="pro-content my-3">
-                  <div class="d-flex align-items-center">
-                    <ins
-                      class="pe-2 fs-15 fw-semibold text-decoration-none text-dark"
-                      >$20.00</ins
-                    >
-                    <del class="text-muted fs-15">$30.00</del>
-                    <div class="rating ms-auto">
-                      <i
-                        class="mdi mdi-star fs-18 text-warning d-inline-block"
-                      ></i>
-                      <h5 class="d-inline-block fs-15">4.9</h5>
-                    </div>
-                  </div>
-                  <a href="{% url 'product-detail' %}">
-                    <p class="text-muted fw-normal lh-base my-1">
-                      Children Decorated Shoes Cotton Green
-                    </p>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <!-- end col -->
+            <!-- end of product item (by Matthias)  -->
           </div>
           <!-- end row -->
+
+
+          <!-- pagination part of the section (by Matt)-->
+        <div class="row">
+            <div class="col-lg-12 mt-5">
+              <nav aria-label="Page navigation example">
+                {% if products.has_other_pages %}
+                <ul class="pagination">
+                  {% if products.has_previous %}
+                  <li class="page-item">
+                    <a
+                      class="page-link"
+                      href="?page={{products.previous_page_number}}"
+                      aria-label="Previous"
+                    >
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  {% else %}
+                  <li class="page-item disabled">
+                    <a class="page-link">&laquo;</a>
+                  </li>
+                  {% endif %}
+  
+                  <!-- loop the page range, if there are more items to show -->
+                  {% for i in products.paginator.page_range %}
+                  <!-- break the page and show the page number -->
+                  {% if products.number == i %}
+                  <li class="page-item active">
+                    <a class="page-link">{{i}}</a>
+                  </li>
+                  {% else %}
+                  <li class="page-item">
+                    <a href="?page={{i}}" class="page-link">{{i}}</a>
+                  </li>
+                  {% endif %} {% endfor %} {% if products.has_next %}
+                  <li class="page-item">
+                    <a
+                      href="?page={{products.next_page_number}}"
+                      class="page-link"
+                      >&raquo;</a
+                    >
+                    >
+                  </li>
+                  {% else %}
+                  <li class="page-item disabled">
+                    <a class="page-link">&raquo;</a>
+                  </li>
+                  {% endif %}
+                </ul>
+                {% endif %}
+  
+
+          {% comment %}
           <div class="row">
             <div class="col-lg-12 mt-5">
               <nav aria-label="Page navigation example">
@@ -867,16 +298,19 @@
                 </ul>
               </nav>
             </div>
+            {% endcomment %}
           </div>
         </div>
       </div>
     </div>
+
+
     <!-- END ROW -->
   </div>
 </section>
 
 <!-- start brand-logo -->
-<section class="client-section sm-section">
+{% comment %} <section class="client-section sm-section">
   <div class="container">
     <div class="row justify-content-between">
       <div class="col-md-auto col-12 mt-3 py-lg-0 py-3">
@@ -928,6 +362,6 @@
     <!-- end row -->
   </div>
   <!-- end container -->
-</section>
+</section> {% endcomment %}
 <!-- end brand-logo -->
 {% endblock content %}

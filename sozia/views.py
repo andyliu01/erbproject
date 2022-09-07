@@ -19,9 +19,11 @@ def search(request):
         
         if 'keywords' in request.GET:
             keywords = request.GET['keywords']
-            if keywords:
+            if keywords == "":
+                queryset_list = None       
+            else:
                queryset_list = queryset_list.filter(description__icontains=keywords)
-        
+                  
         else:
             queryset_list = None
               
