@@ -8,14 +8,20 @@
     <div class="row">
       <div class="col-lg-9">
         <div class="page-title">
-          <h2 class="text-dark fw-light lh-base mt-5">
+          {% comment%}<h2 class="text-dark fw-light lh-base mt-5">
             Launching Spring <span class="fw-medium title">Summer'21</span>
+          </h2>{% endcomment %}
+          <h2 class="text-dark fw-light lh-base mt-5">
+            <span class="fw-medium title">Give Yourself More Green</span>
           </h2>
-          <p class="fs-16 text-muted mb-0">
+          {% comment %}<p class="fs-16 text-muted mb-0">
             Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat
             ipsum, nec sagittis sem nibh id elit. Proin gravida nibh vel velit
             auctor Aenean sollicitudin, adipisicing elit sed lorem quis bibendum
             auctor.
+          </p>{% endcomment %}
+          <p class="fs-16 text-muted mb-0">
+            Grab some green plants and enjoy the pleasures from nature.
           </p>
         </div>
       </div>
@@ -26,39 +32,15 @@
 <!-- End Title -->
 
 <!-- Remove the below -->
- <section class="sm-section">
+<section class="sm-section">
   <div class="container">
-      {% comment %} </div>
-    </div>   {% endcomment %}
+      </div>
+    </div> 
     <!-- END ROW -->
-
-          <!-- items -->
-          {% comment %}
-          <div class="mt4">
-            #markon 26 Aug 2022
-            <div class="p-3 bg-light">
-              <h6 class="mb-0">Items</h6>
-            </div>
-            <div class="ms-3 my-3">
-              <p class="d-inline-block text-dark fs-16">Select Items</p>
-              <select
-                class="form-select d-inline-block border w-50 ms-5 ms-md-2"
-                id="autoSizingSelect"
-              >
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-            </div>
-          </div>
-          {% endcomment %}
-          <!-- end item -->
-
-          {% comment %} marked line 204 for container make photo in
-      center {% endcomment %}
-      {% comment %} <div class="container" class="col-md-9">
+    
+      <div class="container" class="col-md-9">
         <div class="row">
-          <div class="col-lg-4 col-md-6">
+          {% comment %}<div class="col-lg-4 col-md-6">
             <div class="product-item mt-4">
               <div class="product-img rounded position-relative">
                 <img
@@ -78,7 +60,7 @@
                     ><i
                       class="mdi mdi-cart-outline fs-22 me-3 pe-3 fw-bolder pro-icon border-end"
                     ></i
-                  ></a> {% endcomment %}
+                  ></a>{% endcomment %}
                   {% comment %} #marked on 26 Aug 2022
                   <a href="{% url 'product-detail' %}"
                     ><i
@@ -86,7 +68,7 @@
                     ></i
                   ></a>
                   {% endcomment %} <!--# comment out by MATTHIAS -->
-                  {% comment %} <a href="{% url 'product-cart' %}"
+                  {% comment %}<a href="{% url 'product-cart' %}"
                     ><i
                       class="mdi mdi-heart-outline fs-22 fw-bolder pro-icon"
                     ></i
@@ -118,13 +100,14 @@
            <!-- end col --> 
           
           <!--start of product item (by Matt)-->
-          <div class="col-md-9">
+          <div class = "container" class="col-md-9">
             <div class="row">
               <!-- Add code here-->
               {% if products %} {% for product in products %}
               <div class="col-lg-4 col-md-6">
                 <div class="product-item mt-4">
                   <div class="product-img rounded position-relative">
+                    
                     <img
                       class="img-fluid"
                       src="{{ product.photo_main.url }}"
@@ -133,13 +116,13 @@
                     />
                     
                     <!--take away the discount portion-->
-                    {% if product.discount_percent != 0 %}
+                    {% comment %} {% if product.discount_percent != 0 %}
                     <span
                       class="text-dark badge bg-light rounded-3 fs-14 fw-bold position-absolute top-0 start-0 mt-2 ms-2 py-2"
 
                       >-{{ product.discount_percent }} % off</span
                     >
-                    {% endif %}
+                    {% endif %} {% endcomment %}
 
                     <div
                       class="hover-content text-center w-100 position-absolute bottom-0 start-50 translate-middle-x py-2 mb-3"
@@ -161,35 +144,24 @@
                       ></a> {% endcomment %}
                     </div>
                   </div>
-                  <!-- this is discounted price below the item pic, called from models.py def discount -->
-                  {% if product.discount_percent != 0 %}
-                  <div class="pro-content my-3">
-                    <div class="d-flex align-items-center">
-                      <ins
-                        class="pe-2 fs-15 fw-semibold text-decoration-none text-dark"
-                        >$ {{ product.discount }}</ins
-                      >
-                      <!-- item original price -->
-                      <del class="text-muted fs-15">
-                      $ {{ product.price }}</del> 
-                  {% else %}
+                  {% comment %} {% if product.discount_percent != 0 %} {% endcomment %}
                   <div class="pro-content my-3">
                     <div class="d-flex align-items-center">
                       <ins
                         class="pe-2 fs-15 fw-semibold text-decoration-none text-dark"
                         >$ {{ product.price }}</ins
                       >
-                  {% endif %}
+                      <!-- item original price -->
+                      <del class="text-muted fs-15"></del> 
+                  {% comment %} {% else %}
+                  <div class="pro-content my-3">
+                    <div class="d-flex align-items-center">
+                      <ins
+                        class="pe-2 fs-15 fw-semibold text-decoration-none text-dark"
+                        >$ {{ product.discount }}</ins
+                      >
+                  {% endif %} {% endcomment %}
 
-
-                      <div class="rating ms-auto">
-                        <i
-                          class="mdi mdi-star fs-18 text-warning d-inline-block"
-                        ></i>
-                        <h5 class="d-inline-block fs-15">
-                          {{ product.selected_item }}
-                        </h5>
-                      </div>
                     </div>
                     <a href="{% url 'product' product.id %}">
                       <p class="text-muted fw-normal lh-base my-1">
@@ -252,7 +224,6 @@
                       class="page-link"
                       >&raquo;</a
                     >
-                    >
                   </li>
                   {% else %}
                   <li class="page-item disabled">
@@ -261,44 +232,6 @@
                   {% endif %}
                 </ul>
                 {% endif %}
-  
-
-          {% comment %}
-          <div class="row">
-            <div class="col-lg-12 mt-5">
-              <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                  <li class="page-item">
-                    <a
-                      class="page-link"
-                      href="javascript:void(0)"
-                      aria-label="Previous"
-                    >
-                      <span aria-hidden="true">&laquo;</span>
-                    </a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link active" href="javascript:void(0)">1</a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link" href="javascript:void(0)">2</a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link" href="javascript:void(0)">3</a>
-                  </li>
-                  <li class="page-item">
-                    <a
-                      class="page-link"
-                      href="javascript:void(0)"
-                      aria-label="Next"
-                    >
-                      <span aria-hidden="true">&raquo;</span>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            {% endcomment %}
           </div>
         </div>
       </div>
@@ -310,58 +243,8 @@
 </section>
 
 <!-- start brand-logo -->
-{% comment %} <section class="client-section sm-section">
-  <div class="container">
-    <div class="row justify-content-between">
-      <div class="col-md-auto col-12 mt-3 py-lg-0 py-3">
-        <div class="client-box">
-          <img
-            src="{% static 'images/brand/brand-1.png'%}"
-            class="mx-auto d-block img-fluid"
-            alt="client-logo"
-          />
-        </div>
-      </div>
-      <div class="col-md-auto col-12 mt-3 py-lg-0 py-3">
-        <div class="client-box">
-          <img
-            src="{% static 'images/brand/brand-2.png'%}"
-            class="mx-auto d-block img-fluid"
-            alt="client-logo"
-          />
-        </div>
-      </div>
-      <div class="col-md-auto col-12 mt-3 py-lg-0 py-3">
-        <div class="client-box">
-          <img
-            src="{% static 'images/brand/brand-3.png'%}"
-            class="mx-auto d-block img-fluid"
-            alt="client-logo"
-          />
-        </div>
-      </div>
-      <div class="col-md-auto col-12 mt-3 py-lg-0 py-3">
-        <div class="client-box">
-          <img
-            src="{% static 'images/brand/brand-4.png'%}"
-            class="mx-auto d-block img-fluid"
-            alt="client-logo"
-          />
-        </div>
-      </div>
-      <div class="col-md-auto col-12 mt-3 py-lg-0 py-3">
-        <div class="client-box">
-          <img
-            src="{% static 'images/brand/brand-5.png'%}"
-            class="mx-auto d-block img-fluid"
-            alt="client-logo"
-          />
-        </div>
-      </div>
-    </div>
-    <!-- end row -->
-  </div>
-  <!-- end container -->
-</section> {% endcomment %}
+<section class="client-section sm-section">
+
+</section>
 <!-- end brand-logo -->
 {% endblock content %}

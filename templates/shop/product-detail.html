@@ -1,4 +1,4 @@
-{% extends 'partials/base.html' %} {% load static %} {% block content %}
+s{% extends 'partials/base.html' %} {% load static %} {% block content %}
 <!-- Start Title -->
 <section>
   <div class="container">
@@ -6,8 +6,9 @@
       <div class="col-lg-9">
         <div class="page-title">
           <h2 class="text-dark fw-light lh-base mt-5">
-            360 Smart 720p CCTV MP
-            <span class="fw-medium title">Digital Camera</span>
+            {{ product.name }}<span class="fw-medium title"
+              >Digital Camera</span
+            >
           </h2>
           <p class="fs-16 text-muted mb-0">
             Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat
@@ -33,59 +34,44 @@
             <div class="position-relative">
               <img
                 class="img-fluid rounded-3"
-                src="{% static 'images/products/pro-1.jpg'%}"
+                src="{{ product.photo_main.url }}"
                 alt=""
               />
+              {% comment %} {% if product.discount_percent != 0 %}
               <span
                 class="text-dark badge bg-light rounded-3 fs-14 fw-bold position-absolute top-0 start-0 mt-2 ms-2 py-2"
-                >-18%</span
+                >-{{ product.discount_percent }} % off</span
               >
+              {% endif %} {% endcomment %}
             </div>
-            <div class="row">
-              <div class="col-sm-4 mt-4">
-                <a href=""
-                  ><img
-                    class="img-fluid rounded"
-                    src="{% static 'images/products/pro-5.jpg'%}"
-                    alt=""
-                /></a>
-              </div>
-              <div class="col-sm-4 mt-4">
-                <a href=""
-                  ><img
-                    class="img-fluid rounded"
-                    src="{% static 'images/products/pro-3.jpg'%}"
-                    alt=""
-                /></a>
-              </div>
-              <div class="col-sm-4 mt-4">
-                <a href=""
-                  ><img
-                    class="img-fluid rounded"
-                    src="{% static 'images/products/pro-4.jpg'%}"
-                    alt=""
-                /></a>
-              </div>
-            </div>
+
           </div>
+          {% comment %} {% if product.discount_percent != 0 %} {% endcomment %}
           <div class="col-md-7 mt-4">
             <div class="pro-detail-content">
               <div class="price my-3">
                 <ins
                   class="pe-2 fs-18 text-success fw-semibold text-decoration-none"
-                  >$209.00</ins
+                  >${{ product.price }}</ins
                 >
-                <del class="text-muted fs-18">$230.00</del>
+                {% comment %} <del class="text-muted fs-18">${{ product.price }}</del>
               </div>
+          {% else %}
+          <div class="col-md-7 mt-4">
+            <div class="pro-detail-content">
+              <div class="price my-3">
+                <ins
+                  class="pe-2 fs-18 text-success fw-semibold text-decoration-none"
+                  >${{ product.discount }}</ins
+                >
+                <del class="text-muted fs-18"></del>
+              </div>
+          {% endif %} {% endcomment %}
 
-              <p class="text-muted fs-16 my-3">
-                The full monty brilliant young delinquent burke naff baking
-                cakes the wireless argy-bargy smashing, squiffy chimney pot I he
-                nicked it twit brolly spend a penny he legged it.
-              </p>
+              <p class="text-muted fs-16 my-3">{{ product.description }}</p>
               <div class="rating my-3">
-                <i class="mdi mdi-star fs-20 text-warning d-inline-block"></i>
-                <h5 class="d-inline-block fs-16 mb-0">5.0</h5>
+                {% comment %}<i class="mdi mdi-star fs-20 text-warning d-inline-block"></i>
+                <h5 class="d-inline-block fs-16 mb-0">5.0</h5>{% endcomment %}
               </div>
 
               <div class="details mb-4">
@@ -109,19 +95,53 @@
                 </ul>
                 <ul class="list-unstyled list-inline"></ul>
               </div>
+
               <div class="qty mb-4">
-                <h6 class="d-inline-block fw-semibold">Select Items :</h6>
-                <select
-                  class="form-select border d-inline-block ms-4 w-25"
-                  id="autoSizingSelect"
+                <h6 class="d-inline-block fw-semibold">Quantity:</h6>
+                <!-- Adding quantity by Matt -->
+                <form action="{% url 'add_product' product.id %}" method="POST">
+                  {% csrf_token %}
+                  <label for="ID"></label>
+                  <input
+                    type="hidden"
+                    name="product"
+                    value="{{product.id}}"
+                  /><br /><br />
+
+                  <label for="QTY">quantity</label>
+                  <input
+                    type="text"
+                    id="quantity"
+                    name="quantity"
+                  /><br /><br />
+                  <input type="Submit" value="Add to Cart" />
+                </form>
+                <!-- Remove item from cart -->
+                {% comment %} <form
+                  action="{% url 'remove_product' product.id %}"
+                  method="POST"
                 >
-                  <option selected="">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
+                  {% csrf_token %}
+                  <label for="ID"></label>
+                  <input
+                    type="hidden"
+                    name="product"
+                    value="{{product.id}}"
+                  /><br /><br />
+
+                  <label for="QTY"></label>
+                  <input
+                    type="text"
+                    id="quantity"
+                    name="quantity"
+                  /><br /><br />
+
+                  <input type="submit" value="Submit" />
+                </form> {% endcomment %}
+
+                <!-- Adding completed -->
               </div>
-              <div class="color mb-4">
+              {% comment %}<div class="color mb-4">
                 <h6 class="d-inline-block fw-semibold">Color :</h6>
                 <ul
                   class="d-inline-block list-unstyled list-inline align-middle ms-3 mb-0"
@@ -156,14 +176,14 @@
               <div class="availability d-flex mb-4">
                 <h6 class="fw-semibold">Availability :</h6>
                 <p class="text-muted fs-15 ms-4">In Stock</p>
-              </div>
-              <div class="hover-content">
+              </div>{% endcomment %}
+              {% comment %}<div class="hover-content">
                 <a
-                  href="{% url 'product-cart' %}"
+                  href="{% url 'product-detail' %}"
                   class="btn btn-primary me-2 my-2"
                 >
-                  <i data-feather="shopping-cart" class="icon-xs me-2"></i> Add
-                  To Cart</a
+                  <i data-feather="shopping-cart" class="icon-xs me-2"></i>
+                  <button>Add To Cart</button></a
                 >
                 <a
                   href="{% url 'product-cart' %}"
@@ -171,7 +191,7 @@
                 >
                   <i data-feather="heart" class="icon-xs me-2"></i> Wishlist</a
                 >
-              </div>
+              </div> {% endcomment %}
             </div>
           </div>
         </div>
@@ -182,7 +202,7 @@
 <!-- end pro-detail -->
 
 <!-- detail tab -->
-<section class="section bg-light">
+{% comment %} <section class="section bg-light">
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
@@ -201,8 +221,8 @@
               aria-controls="nav-home"
               aria-selected="true"
               >Description</a
-            >
-            <a
+            > {% endcomment %}
+            {% comment %}<a
               class="nav-link border-0"
               id="nav-profile-tab"
               data-bs-toggle="tab"
@@ -211,8 +231,8 @@
               aria-controls="nav-profile"
               aria-selected="false"
               >Reviews</a
-            >
-          </div>
+            >{% endcomment %}
+          {% comment %} </div>
         </nav>
         <div class="tab-content py-4" id="nav-tabContent">
           <div
@@ -236,9 +256,9 @@
               the wireless argy-bargy smashing, squiffy chimney pot I he nicked
               it twit brolly spend a penny he legged it, cup of tea is ruddy
               grub.!
-            </p>
+            </p> {% endcomment %}
 
-            <div class="row text-muted">
+            {% comment %}<div class="row text-muted">
               <div class="col-md-6">
                 <ul class="list-unstyled">
                   <li class="py-1">
@@ -279,10 +299,10 @@
                   </li>
                 </ul>
               </div>
-            </div>
+            </div>{% endcomment %}
           </div>
 
-          <div
+          {% comment %} <div
             class="tab-pane fade"
             id="nav-profile"
             role="tabpanel"
@@ -346,9 +366,9 @@
               </li>
             </ul>
           </div>
-        </div>
+        </div> {% endcomment %}
         <!-- end nav -->
-        <div>
+        {% comment %}<div>
           <h6 class="lh-base fw-semibold mt-4 mb-3">Add Your Review</h6>
           <form method="post">
             <div class="row g-4 mb-2">
@@ -409,13 +429,13 @@
             </div>
             <div class="row">
               <div class="col-lg-12 mt-3">
-                <a href="{% url 'home' %}" class="btn btn-primary"
+                <a href="javascript:void(0)" class="btn btn-primary"
                   >Send Review <i class="icon-xs" data-feather="arrow-right"></i
                 ></a>
               </div>
             </div>
           </form>
-        </div>
+        </div>{% endcomment %}
       </div>
     </div>
     <!-- end row -->
@@ -424,8 +444,7 @@
 <!-- end detail tab -->
 
 <!-- start brand-logo -->
-{% comment %}
-<section class="client-section section">
+{% comment %}<section class="client-section section">
   <div class="container">
     <div class="row">
       <div class="col-12 text-center mb-5">
@@ -484,7 +503,6 @@
     <!-- end row -->
   </div>
   <!-- end container -->
-</section>
-{% endcomment %}
+</section>{% endcomment %}
 <!-- end brand-logo -->
 {% endblock content %}
