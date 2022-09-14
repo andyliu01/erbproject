@@ -1,4 +1,6 @@
 {% extends 'partials/base.html' %} {% load static %} {% block content %}
+<!---->
+{% load humanize %}
 <!-- Start Title -->
 <section>
   <div class="container">
@@ -10,12 +12,7 @@
               safe payment.</span
             >
           </h2>
-          <p class="fs-16 text-muted mb-0">
-            Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat
-            ipsum, nec sagittis sem nibh id elit. Proin gravida nibh vel velit
-            auctor Aenean sollicitudin, adipisicing elit sed lorem quis bibendum
-            auctor.
-          </p>
+          <p class="fs-16 text-muted mb-0"></p>
         </div>
       </div>
     </div>
@@ -36,7 +33,7 @@
             <div class="col-md-12">
               <div class="border rounded position-relative p-4">
                 <h5 class="fw-semibold fs-16">
-                  Stephen Guterez
+                  Stephen Chow
                   <a href="javascript:void(0)">
                     <i
                       class="mdi mdi-square-edit-outline fs-22 text-muted position-absolute top-0 end-0 mt-2 me-2"
@@ -44,10 +41,10 @@
                   </a>
                 </h5>
                 <p class="my-2 mt-3 text-muted fs-15">
-                  4624 Meadowcrest Lane Pikeville, KY 41501
+                  123 Meadowcrest Lane Pikeville
                 </p>
-                <p class="my-2 text-muted fs-15">Call : +00 410-790-2942</p>
-                <p class="my-2 text-muted fs-15">Email : loremipsum@duy.com</p>
+                <p class="my-2 text-muted fs-15">Call : +852 8765 4321</p>
+                <p class="my-2 text-muted fs-15">Email : stephen@email.com</p>
               </div>
               <a href="javascript:void(0)" class="btn btn-secondary mt-3"
                 ><i class="mdi mdi-plus-circle"></i> Add Address</a
@@ -72,7 +69,7 @@
               <div class="price d-inline-block">
                 <ins
                   class="pe-1 fs-15 fw-semibold text-primary text-decoration-none"
-                  >${{ item.price }}</ins
+                  >${{ item.price|intcomma }}</ins
                 >
                 <br
                   class="badge bg-soft-white text-secondary rounded-3 fs-14 fw-bold py-2"
@@ -111,7 +108,7 @@
               <p class="text-white-50 text-uppercase fs-13 mt-4 mb-2">
                 Card Holder Name
               </p>
-              <h6 class="text-white fw-medium">John Smith</h6>
+              <h6 class="text-white fw-medium">Stephen Chow</h6>
               <div class="d-flex align-items-center">
                 <div class="pay-text">
                   <p class="text-white-50 text-uppercase fs-13 mt-4 mb-2">
@@ -140,7 +137,7 @@
                 class="form-check-label fw-medium text-dark ms-1"
                 for="flexRadioDefault1"
               >
-                Credit/Debit Card
+                Credit Card
               </label>
               <span class="text-muted"
                 ><i class="icon-xs float-end" data-feather="check"></i
@@ -159,7 +156,7 @@
                 class="form-check-label fw-medium text-dark ms-1"
                 for="flexRadioDefault2"
               >
-                Cash on delivery
+                AlipayHK
               </label>
               <span class="text-muted"
                 ><i class="icon-xs float-end" data-feather="check"></i
@@ -179,13 +176,14 @@
                 class="form-check-label fw-medium text-dark ms-1"
                 for="flexRadioDefault3"
               >
-                Online Banking</label
+                PayPal</label
               >
               <span class="text-primary"
                 ><i class="icon-xs float-end" data-feather="check"></i
               ></span>
             </div>
           </div>
+          {% comment %}
           <div class="bg-light rounded-3 p-4 mt-4">
             <div class="form-check fs-16">
               <input
@@ -205,6 +203,7 @@
               ></span>
             </div>
           </div>
+          {% endcomment %}
         </div>
       </div>
     </div>
@@ -219,7 +218,9 @@
               <h5 class="fs-16 mb-2 fw-semibold">
                 <i class="icon-xs icon" data-feather="arrow-right"></i> Price
               </h5>
-              <p class="text-muted mb-0 ms-3 ps-1 fs-15">${{ cart.total }}</p>
+              <p class="text-muted mb-0 ms-3 ps-1 fs-15">
+                ${{ cart.total|intcomma }}
+              </p>
             </div>
             {% comment %}
             <div class="col-lg-2 col-md-3 my-2">
@@ -241,11 +242,13 @@
                 <i class="icon-xs icon" data-feather="arrow-right"></i>
                 Total
               </h5>
-              <p class="text mb-0 ms-3 ps-1 fs-15">${{ cart.total }}</p>
+              <p class="text mb-0 ms-3 ps-1 fs-15">
+                ${{ cart.total|intcomma }}
+              </p>
             </div>
             <div class="col-lg-2 col-md-3 my-2">
               <a href="{% url 'home' %}" class="btn btn-danger"
-                >Pay Now <i class="icon-xs" data-feather="arrow-right"></i
+                >Pay Now<i class="icon-xs" data-feather="arrow-right"></i
               ></a>
             </div>
           </div>

@@ -159,7 +159,7 @@
         {% else %}
         class="nav-item mr-3"
         {% endif %} >
-          <a class="nav-link" href="{% url 'dashboard' %}">welcome {{ user.username }} (Dashboard)</a
+          <a class="nav-link" href="{% url 'dashboard' %}">welcome {{ user.username }}</a
           >
         </li>
         <!---->
@@ -199,9 +199,11 @@
             
         <li class="nav-item">
           <a class="nav-link sub-menu-item" href="{% url 'search' %}"
-            >Search</a
-          >
+            ><img
+            src="{% static 'images/magnifying-glass.png'%}" height="20px"></a>
+          
         </li>
+        
 
 
       </ul>

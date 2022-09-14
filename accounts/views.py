@@ -17,7 +17,7 @@ def register(request):
         if password == password2:
             
             if User.objects.filter(username=username).exists():
-                messages.error(request, "Username exited !")
+                messages.error(request, "Username existed !")
                 return redirect('register')
             else:
                 if User.objects.filter(email=email).exists():
@@ -47,7 +47,7 @@ def login(request):
             messages.success(request, 'You are logging in !')
             return redirect('dashboard')
         else:
-            messages.error(request, 'Invalid credentials')
+            messages.error(request, 'Invalid login')
             return redirect('login')
     else:
         return render(request, 'accounts/login.html')

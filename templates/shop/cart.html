@@ -1,5 +1,5 @@
 {% extends 'partials/base.html' %} {% load static %} {% block content %}
-{% comment %} {% load mathfilters %} {% endcomment %}
+{% load humanize %}
 <!-- Start Title -->
 <section>
   <div class="container">
@@ -83,7 +83,7 @@
                   <div class="price d-inline-block">
                     <ins
                       class="text-dark pe-1 fs-15 fw-semibold text-decoration-none"
-                      >$ {{ item.price }}</ins
+                      >$ {{ item.price|intcomma }}</ins
                     >
                     {% comment %} <del class="text-muted fs-15"></del> {% endcomment %}
                   </div>
@@ -188,7 +188,7 @@
                   <div>
                     <span
                       class="badge bg-soft-white text-primary rounded-3 fs-14 fw-bold py-2"
-                      >{{ item.subtotal }}</span>
+                      >${{ item.subtotal|intcomma }}</span>
                   </div>
                 
 
@@ -325,7 +325,7 @@
                 <li class="list-inline-item">
                   <h5 class="fs-15 mb-0 fw-semibold">Price :</h5>
                 </li>
-                <li class="list-inline-item float-end text-dark">${{ cart.total }}</li>
+                <li class="list-inline-item float-end text-dark">${{ cart.total|intcomma }}</li>
               </ul>
               <ul class="list-unstyled list-inline border-bottom py-3 mb-0">
                 <li class="list-inline-item">
@@ -335,6 +335,7 @@
                   Free
                 </li>
               </ul>
+              
               {% comment %} <ul class="list-unstyled list-inline border-bottom py-3 mb-0">
                 <li class="list-inline-item">
                   <h5 class="fs-15 mb-0 fw-semibold">Discount :</h5>
@@ -345,9 +346,10 @@
                 <li class="list-inline-item">
                   <h5 class="fs-16 mb-0 fw-semibold">Total :</h5>
                 </li>
-                <li
+                <li class="list-inline-item float-end text-dark">${{ cart.total|intcomma }}</li>
+                {% comment %} <li
                   class="list-inline-item fs-16 fw-semibold text-dark float-end"
-                >{{ cart.total }}</li>
+                >${{ cart.total }}</li> {% endcomment %}
               </ul>
               <a
                 href="{% url 'product-checkout' %}"

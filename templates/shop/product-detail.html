@@ -1,4 +1,6 @@
-s{% extends 'partials/base.html' %} {% load static %} {% block content %}
+{% extends 'partials/base.html' %} {% load static %} {% block content %}
+<!---->
+{% load humanize %}
 <!-- Start Title -->
 <section>
   <div class="container">
@@ -7,14 +9,12 @@ s{% extends 'partials/base.html' %} {% load static %} {% block content %}
         <div class="page-title">
           <h2 class="text-dark fw-light lh-base mt-5">
             {{ product.name }}<span class="fw-medium title"
-              >Digital Camera</span
+              ></span
             >
           </h2>
           <p class="fs-16 text-muted mb-0">
-            Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat
-            ipsum, nec sagittis sem nibh id elit. Proin gravida nibh vel velit
-            auctor Aenean sollicitudin, adipisicing elit sed lorem quis bibendum
-            auctor.
+             {{ product.description }}
+            
           </p>
         </div>
       </div>
@@ -51,8 +51,8 @@ s{% extends 'partials/base.html' %} {% load static %} {% block content %}
             <div class="pro-detail-content">
               <div class="price my-3">
                 <ins
-                  class="pe-2 fs-18 text-success fw-semibold text-decoration-none"
-                  >${{ product.price }}</ins
+                  class="pe-2 fs-18 text-primary fw-semibold text-decoration-none"
+                  >${{ product.price|intcomma }}</ins
                 >
                 {% comment %} <del class="text-muted fs-18">${{ product.price }}</del>
               </div>
@@ -68,7 +68,7 @@ s{% extends 'partials/base.html' %} {% load static %} {% block content %}
               </div>
           {% endif %} {% endcomment %}
 
-              <p class="text-muted fs-16 my-3">{{ product.description }}</p>
+              {% comment %} <p class="text-muted fs-16 my-3">{{ product.description }}</p> {% endcomment %}
               <div class="rating my-3">
                 {% comment %}<i class="mdi mdi-star fs-20 text-warning d-inline-block"></i>
                 <h5 class="d-inline-block fs-16 mb-0">5.0</h5>{% endcomment %}
@@ -78,19 +78,19 @@ s{% extends 'partials/base.html' %} {% load static %} {% block content %}
                 <ul class="list-unstyled">
                   <li class="text-muted py-1">
                     <i data-feather="arrow-right" class="icon-xxs me-2"></i>
-                    Generally delivered in 7 - 11 days
+                    Generally delivered in 3 - 5 days
                   </li>
                   <li class="text-muted py-1">
                     <i data-feather="arrow-right" class="icon-xxs me-2"></i>
-                    Warranty Period (in years):1
+                    Size: {{ product.size }}
                   </li>
                   <li class="text-muted py-1">
                     <i data-feather="arrow-right" class="icon-xxs me-2"></i>
-                    Number of Focus Points:3
+                    Light: {{ product.light }}
                   </li>
                   <li class="text-muted py-1">
-                    <i data-feather="arrow-right" class="icon-xxs me-2"></i> 7
-                    Days Replacement
+                    <i data-feather="arrow-right" class="icon-xxs me-2"></i>
+                    Care: {{ product.care }}
                   </li>
                 </ul>
                 <ul class="list-unstyled list-inline"></ul>

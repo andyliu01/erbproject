@@ -24,7 +24,7 @@
           </div>
 
           <br />
-          <button class="btn btn-secondary btn-block mt-4" type="submit">
+          <button class="btn btn-primary btn-block mt-4" type="submit">
             Submit
           </button>
         </form>
@@ -59,8 +59,8 @@
       {% if products %}
       <!-- Product 1 -->
       {% for product in products %}
-      <div class="col-md-6 col-lg-4 mb-4">
-        <div class="card product-preview">
+      <div class="col-md-6 col-lg-4 text-center">
+        <div class="card product-preview text-center">
           <img class="card-img-top" src="{{ product.photo_main.url }}" alt="" />
           <div class="card-img-overlay">
             <h2>
@@ -81,8 +81,15 @@
               </p>
               {% endcomment %}
             </div>
-            <hr />
             {% comment %}
+            <hr />
+            {% endcomment %} {% comment %}
+            <a href="{% url 'product-cart' %}"
+              ><i
+                class="mdi mdi-cart-outline fs-22 me-3 pe-3 fw-bolder pro-icon border-end"
+              ></i
+            ></a>
+            {% endcomment %} {% comment %}
             <div class="row py-2 text-secondary">
               <div class="col-6">
                 <i class="fas fa-th-large"></i> Sqft: {{ listing.sqft }}
@@ -120,13 +127,17 @@
             {% endcomment %}
           </div>
         </div>
+        <a style="color: grey" href="{% url 'product-cart' %}"
+          ><i
+            class="mdi mdi-cart-outline fs-22 me-3 pe-3 fw-bolder pro-icon border-end"
+          ></i
+        ></a>
+        <a style="color: grey" href="{% url 'product' product.id %}"
+          ><i
+            class="mdi mdi-eye-outline fs-22 me-3 pe-3 fw-bolder pro-icon border-end"
+          ></i
+        ></a>
       </div>
-
-      <a href="{% url 'product-cart' %}"
-        ><i
-          class="mdi mdi-cart-outline fs-22 me-3 pe-3 fw-bolder pro-icon border-end"
-        ></i
-      ></a>
 
       {% endfor %} {% else %}
       <div class="col-md-12">

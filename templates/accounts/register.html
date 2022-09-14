@@ -13,7 +13,7 @@
           </div>
           <div class="card-body">
             <!---->
-            {% comment %} {% include 'partials/_alerts.html' %} {% endcomment %}
+            {% include 'partials/_alerts.html' %}
             <!---->
             <form action="{% url 'register' %}" method="POST">
               <!---->
@@ -75,7 +75,7 @@
               <input
                 type="submit"
                 value="Register"
-                class="btn btn-secondary btn-block"
+                class="btn btn-primary btn-block"
               />
             </form>
           </div>

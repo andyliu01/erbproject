@@ -1,6 +1,6 @@
 {% extends 'partials/base.html' %} {% load static %} {% block content %}
-
-
+<!---->
+{% load humanize %}
 
 <!-- Start Title -->
 <section>
@@ -134,7 +134,7 @@
                       ></a>
                       <a href="{% url 'product' product.id %}"
                         ><i
-                          class="mdi mdi-eye-outline fs-22 me-3 pe-3 fw-bolder pro-icon border-end active"
+                          class="mdi mdi-eye-outline fs-22 me-3 pe-3 fw-bolder pro-icon border-end"
                         ></i
                       ></a>
                       {% comment %} <a href="{% url 'product-cart' %}"
@@ -149,7 +149,7 @@
                     <div class="d-flex align-items-center">
                       <ins
                         class="pe-2 fs-15 fw-semibold text-decoration-none text-dark"
-                        >$ {{ product.price }}</ins
+                        >$ {{ product.price|intcomma }}</ins
                       >
                       <!-- item original price -->
                       <del class="text-muted fs-15"></del> 
